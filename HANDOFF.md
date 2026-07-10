@@ -6,7 +6,7 @@ This project is a **curated library of design system prompts** for AI-powered GU
 
 **Owner:** Joey Woody, J. Bragg Consulting Inc.
 **Location:** `E:\CLAUDE_Workspace\Claude\Report_Files\GUI_Design_Center_Library`
-**Last Updated:** 2025-12-29
+**Last Updated:** 2026-07-10
 
 ---
 
@@ -31,7 +31,7 @@ UI Link → Fetch Design → Create Dashboard → Create Design System → Updat
 
 ## Current Status
 
-### Completed Design Systems (8 total)
+### Completed Design Systems (9 total)
 
 | # | Style | Folder | Mode | Signature Elements |
 |---|-------|--------|------|-------------------|
@@ -43,6 +43,7 @@ UI Link → Fetch Design → Create Dashboard → Create Design System → Updat
 | 6 | **Playful Geometric** | `playful-geometric/` | Light (Cream) | Confetti shapes, bouncy easing, floating icons, pill buttons, 4-color palette |
 | 7 | **Enterprise** | `enterprise/` | Light (Slate) | Colored shadows, gradient text, isometric depth, blurred blobs, elevated cards |
 | 8 | **Twisty** | `twisty/` | Dark (Void) | Layered surfaces, violet-indigo gradients, semantic badges, finance dashboard |
+| 9 | **Hydrolight** | `hydrolight/` | Light (Water) | Depth gradients (cyan→navy), caustic shimmer, water-tinted shadows, wave dividers, monospace gauge readouts, semantic hydro states. Custom-built for Joey's water resources engineering tools; has its own README.md |
 
 ### Each Style Contains
 - `{STYLE}.md` - Full design system documentation (philosophy, colors, typography, components, patterns)
@@ -93,8 +94,13 @@ E:\CLAUDE_Workspace\Claude\Report_Files\GUI_Design_Center_Library\
 │   │   ├── ENTERPRISE.md
 │   │   ├── tokens.json
 │   │   └── tailwind-config.js
-│   └── twisty/
-│       ├── TWISTY.md
+│   ├── twisty/
+│   │   ├── TWISTY.md
+│   │   ├── tokens.json
+│   │   └── tailwind-config.js
+│   └── hydrolight/
+│       ├── HYDROLIGHT.md
+│       ├── README.md                   # Style-specific readme (unique to Hydrolight)
 │       ├── tokens.json
 │       └── tailwind-config.js
 ├── templates/
@@ -265,6 +271,7 @@ Each style uses a consistent token structure:
 - **Academia**: Soft, engraved shadows
 - **Cyberpunk**: Neon glow shadows (multiple layers)
 - **Enterprise**: Colored (indigo-tinted) shadows
+- **Hydrolight**: Colored (sky/cyan-tinted) shadows, never gray; inset "pool" shadows on inputs
 
 ### Typography
 All styles use Google Fonts. Import URLs are stored in `tokens.json` under `typography.fontFamily.googleImport`.
@@ -334,4 +341,15 @@ To continue working on this library in a new chat session:
 
 ---
 
-*This handoff document was last updated on 2025-12-29 to enable continuity across chat sessions.*
+## Session Notes (2026-07-10)
+
+- **Added Hydrolight** (style #9), a custom light-mode water/stormwater theme designed specifically for Joey's engineering tools (PCSWMM/QGIS utilities, calculators, dashboards).
+- Signature elements: vertical depth gradient (#06B6D4 → #0284C7 → #075985), caustic shimmer animation, cyan-tinted shadows, SVG wave dividers, JetBrains Mono/Consolas gauge readouts, semantic hydro status colors (flood #DC2626 / action #D97706 / normal #059669 / baseflow #0284C7).
+- Hydrolight is the only style with its own `README.md` inside the style folder.
+- `tokens.json` includes a dedicated `tkinter` block with exact widget colors plus loader-compatible aliases (`accent`, `accentSecondary`, `card`, `mutedForeground`) so the existing `StyleLoader` normalizes it without changes.
+- Added `"Hydrolight (Light)": "hydrolight/tokens.json"` to the retrofit guide `STYLE_MAP` and style table.
+- **Hydrolight is now the default GUI style** per user request: updated in the global CLAUDE.md (`E:\CLAUDE_Workspace\Claude\.claude\CLAUDE.md`) and both Report_Files CLAUDE.md copies (previously Kinetic).
+
+---
+
+*This handoff document was last updated on 2026-07-10 to enable continuity across chat sessions.*

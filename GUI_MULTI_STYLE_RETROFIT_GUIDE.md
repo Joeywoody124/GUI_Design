@@ -21,6 +21,7 @@ E:\CLAUDE_Workspace\Claude\Report_Files\GUI_Design_Center_Library\styles\
 | Sketch (Light) | Light | Red Marker #ff4d4d | sketch/tokens.json |
 | Playful Geometric (Light) | Light | Violet #8B5CF6 | playful-geometric/tokens.json |
 | Twisty (Dark) | Dark | Violet #8B5CF6 | twisty/tokens.json |
+| Hydrolight (Light) | Light | Open Water #0284C7 | hydrolight/tokens.json |
 
 ---
 
@@ -46,6 +47,7 @@ STYLE_MAP = {
     "Sketch (Light)": "sketch/tokens.json",
     "Playful Geometric (Light)": "playful-geometric/tokens.json",
     "Twisty (Dark)": "twisty/tokens.json",
+    "Hydrolight (Light)": "hydrolight/tokens.json",
 }
 ```
 
@@ -497,6 +499,16 @@ E:\CLAUDE_Workspace\Claude\Report_Files\GUI_Design_Center_Library\Example\mortga
 
 ---
 
-*Guide Version: 1.1*
-*Last Updated: 2025-12-29*
+## STYLE-SPECIFIC NOTES
+
+**Hydrolight (Light):** Water resources engineering theme. For the signature look in tkinter:
+- Use `("Consolas", 20, "bold")` for numeric result labels, with unit labels in `#475569`
+- Header frames: solid `#075985` background with white text (approximates the depth gradient)
+- Status labels: flood `#DC2626` on `#FEF2F2`, action stage `#D97706` on `#FFFBEB`, within banks `#059669` on `#ECFDF5`
+- `tokens.json` includes a ready-made `tkinter` block with all widget colors
+
+---
+
+*Guide Version: 1.2*
+*Last Updated: 2026-07-10*
 *Author: Joey Woody*

@@ -19,22 +19,23 @@ This library stores design system specifications that can be used as prompts whe
 | [Playful Geometric](./styles/playful-geometric/PLAYFUL-GEOMETRIC.md) | Memphis, Bouncy, Tactile, Pop | Violet #8B5CF6, Pink #F472B6, Yellow #FBBF24 | Light | ✅ Complete |
 | [Enterprise](./styles/enterprise/ENTERPRISE.md) | Corporate Trust, SaaS, Professional | Indigo #4F46E5, Violet #7C3AED | Light | ✅ Complete |
 | [Twisty](./styles/twisty/TWISTY.md) | Fintech, SaaS Dashboard, Modern Dark | Violet #8B5CF6, Indigo #6366F1 | Dark | ✅ Complete |
+| [Hydrolight](./styles/hydrolight/HYDROLIGHT.md) | Sunlit Water, Engineering-Grade, Calm Precision | Open Water #0284C7, Caustic Cyan #06B6D4 | Light | ✅ Complete |
 
 ---
 
 ## Style Comparison
 
-| Attribute | Bauhaus | Kinetic | Academia | Cyberpunk | Sketch | Playful Geometric | Enterprise | Twisty |
-|-----------|---------|---------|----------|-----------|--------|-------------------|------------|--------|
-| **Mode** | Light | Dark | Dark (Warm) | Dark (Void) | Light (Paper) | Light (Cream) | Light (Slate) | Dark (Void) |
-| **Motion** | Minimal | Heavy (marquees) | Deliberate | Digital (glitch) | Playful (jiggle) | Bouncy (overshoot) | Refined (lift) | Subtle (fade) |
-| **Typography** | Sans (Outfit) | Sans (Space Grotesk) | Serifs (3 fonts) | Monospace (3 fonts) | Handwritten (2 fonts) | Sans (Outfit + Jakarta) | Sans (Plus Jakarta) | Sans (Inter) |
-| **Shadows** | Hard offset | None (flat) | Soft engraved | Neon glow | Hard offset (no blur) | Hard offset (colored) | Colored (indigo-tinted) | None (surface contrast) |
-| **Borders** | Thick black (2-4px) | Subtle zinc (2px) | Wood grain (1px) | Chamfered corners | Thick wobbly (2-3px) | Chunky dark (2px) | Subtle slate (1px) | Subtle dark (1px) |
-| **Radius** | Binary (0 or full) | Sharp (0px) | Subtle (4px) | Chamfer clip-path | Wobbly irregular | Mixed (pills + blobs) | Rounded (8-12px + pills) | Rounded (8-20px) |
-| **Accent** | R/B/Y primaries | Acid Yellow | Brass + Crimson | Green/Magenta/Cyan | Red Marker + Blue | Violet/Pink/Yellow/Mint | Indigo + Violet gradient | Violet + Indigo gradient |
-| **Signature** | Geometric shapes | Infinite marquees | Sepia images, Roman numerals | Scanlines, glitch effects | Tape, thumbtacks, rotation | Confetti, floating icons, wiggle | Gradient text, blobs, isometric | Layered surfaces, semantic badges |
-| **Textures** | None | Noise overlay | Paper + vignette | Scanlines + circuit grid | Paper dot pattern | Dot grid, stripes | Blurred gradient orbs | Gradient glow orbs |
+| Attribute | Bauhaus | Kinetic | Academia | Cyberpunk | Sketch | Playful Geometric | Enterprise | Twisty | Hydrolight |
+|-----------|---------|---------|----------|-----------|--------|-------------------|------------|--------|------------|
+| **Mode** | Light | Dark | Dark (Warm) | Dark (Void) | Light (Paper) | Light (Cream) | Light (Slate) | Dark (Void) | Light (Water) |
+| **Motion** | Minimal | Heavy (marquees) | Deliberate | Digital (glitch) | Playful (jiggle) | Bouncy (overshoot) | Refined (lift) | Subtle (fade) | Calm (ripple, shimmer) |
+| **Typography** | Sans (Outfit) | Sans (Space Grotesk) | Serifs (3 fonts) | Monospace (3 fonts) | Handwritten (2 fonts) | Sans (Outfit + Jakarta) | Sans (Plus Jakarta) | Sans (Inter) | Sans + Mono (Manrope + JetBrains) |
+| **Shadows** | Hard offset | None (flat) | Soft engraved | Neon glow | Hard offset (no blur) | Hard offset (colored) | Colored (indigo-tinted) | None (surface contrast) | Colored (cyan-tinted) |
+| **Borders** | Thick black (2-4px) | Subtle zinc (2px) | Wood grain (1px) | Chamfered corners | Thick wobbly (2-3px) | Chunky dark (2px) | Subtle slate (1px) | Subtle dark (1px) | Subtle sky (1px) |
+| **Radius** | Binary (0 or full) | Sharp (0px) | Subtle (4px) | Chamfer clip-path | Wobbly irregular | Mixed (pills + blobs) | Rounded (8-12px + pills) | Rounded (8-20px) | Rounded (10-20px, no pills) |
+| **Accent** | R/B/Y primaries | Acid Yellow | Brass + Crimson | Green/Magenta/Cyan | Red Marker + Blue | Violet/Pink/Yellow/Mint | Indigo + Violet gradient | Violet + Indigo gradient | Cyan → Navy depth gradient |
+| **Signature** | Geometric shapes | Infinite marquees | Sepia images, Roman numerals | Scanlines, glitch effects | Tape, thumbtacks, rotation | Confetti, floating icons, wiggle | Gradient text, blobs, isometric | Layered surfaces, semantic badges | Caustic shimmer, gauge readouts, wave dividers |
+| **Textures** | None | Noise overlay | Paper + vignette | Scanlines + circuit grid | Paper dot pattern | Dot grid, stripes | Blurred gradient orbs | Gradient glow orbs | Ripple orbs, caustic light |
 
 ---
 
@@ -74,8 +75,13 @@ GUI_Design_Center_Library/
 │   │   ├── ENTERPRISE.md
 │   │   ├── tokens.json
 │   │   └── tailwind-config.js
-│   └── twisty/
-│       ├── TWISTY.md
+│   ├── twisty/
+│   │   ├── TWISTY.md
+│   │   ├── tokens.json
+│   │   └── tailwind-config.js
+│   └── hydrolight/
+│       ├── HYDROLIGHT.md
+│       ├── README.md
 │       ├── tokens.json
 │       └── tailwind-config.js
 ├── templates/
@@ -204,6 +210,22 @@ When adding a new design system:
 #2A2A38  Border (Border Dark)
 ```
 
+### Hydrolight Palette (Light Mode)
+```
+#F0F9FF  Background (Surface Light / Sky 50)
+#E0F2FE  Background Alt (Shallows / Sky 100)
+#FFFFFF  Surface (White Cap - cards)
+#082F49  Foreground (Deep Channel / Sky 950)
+#0284C7  Primary (Open Water / Sky 600)
+#06B6D4  Secondary (Caustic Cyan / Cyan 500)
+#075985  Deep (Thalweg / Sky 800 - gradient end)
+#475569  Muted Foreground (Silt / Slate 600)
+#BAE6FD  Border (Ripple Line / Sky 200)
+#DC2626  Flood Stage (exceedance)
+#D97706  Action Stage (warning)
+#059669  Within Banks (passing)
+```
+
 ---
 
 ## Style Selection Guide
@@ -259,6 +281,14 @@ When adding a new design system:
 - Building for finance, analytics, or data-heavy applications
 - Want elegant violet-indigo gradients without being flashy
 - Need professional trust with modern sophistication
+
+**Choose Hydrolight when:**
+- Building water resources / stormwater / hydraulic engineering tools
+- Need PCSWMM or QGIS utility GUIs, calculators, or report generators
+- Want numeric results that read like gauge cards (monospace, unit labels)
+- Need semantic status colors mapped to hydrologic meaning (flood/action/normal)
+- Want a stunning light theme that still feels engineering-grade
+- Building anything for J. Bragg Consulting deliverables
 
 ---
 
@@ -333,8 +363,19 @@ When adding a new design system:
 - Clean data visualization (bar charts, stat cards)
 - Minimal hover effects (background shift only)
 
+### Hydrolight
+- Vertical depth gradients (cyan → sky → navy, light always above dark)
+- Caustic shimmer (animated refracted-light overlay on hero cards)
+- Water-tinted shadows (sky/cyan RGBA, never gray)
+- SVG sine-wave section dividers
+- Monospace gauge readouts with capacity bars
+- Semantic hydro badges (flood/action/normal/baseflow)
+- Freeboard alert cards (3px state-colored left border)
+- Recessed "pool" inputs with inset shadows
+- Ripple focus rings and slow float animations
+
 ---
 
-*Last Updated: 2025-12-29*
+*Last Updated: 2026-07-10*
 *Maintainer: Joey Woody*
-*Styles: 8*
+*Styles: 9*
