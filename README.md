@@ -84,6 +84,9 @@ GUI_Design_Center_Library/
 │       ├── README.md
 │       ├── tokens.json
 │       └── tailwind-config.js
+├── animation/
+│   ├── hydrolight_anim.py           # Tkinter micro-animation toolkit (self-testing)
+│   └── culvert_hwd_pilot.py         # Pilot tool using every animation primitive
 ├── templates/
 │   ├── component-starter.jsx
 │   └── Twisty/
@@ -91,6 +94,10 @@ GUI_Design_Center_Library/
 └── Example/
     └── mortgage_calculator_multi_style.py
 ```
+
+### Animation Toolkit (Python/tkinter)
+
+`animation/hydrolight_anim.py` adds purposeful micro-animation to any themed tool: numeric count-up readouts, gradient gauge bars with rise fills (red past capacity), color fades between semantic states, single pulses on verdict changes, an indeterminate wave progress bar, and a thread helper that keeps the UI responsive during real computation. Global kill switch included; run the file directly for a self-test. See `GUI_MULTI_STYLE_RETROFIT_GUIDE.md` for usage and `animation/culvert_hwd_pilot.py` for a complete working tool.
 
 ---
 

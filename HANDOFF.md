@@ -349,6 +349,11 @@ To continue working on this library in a new chat session:
 - `tokens.json` includes a dedicated `tkinter` block with exact widget colors plus loader-compatible aliases (`accent`, `accentSecondary`, `card`, `mutedForeground`) so the existing `StyleLoader` normalizes it without changes.
 - Added `"Hydrolight (Light)": "hydrolight/tokens.json"` to the retrofit guide `STYLE_MAP` and style table.
 - **Hydrolight is now the default GUI style** per user request: updated in the global CLAUDE.md (`E:\CLAUDE_Workspace\Claude\.claude\CLAUDE.md`) and both Report_Files CLAUDE.md copies (previously Kinetic).
+- **Added `animation/` toolkit** after a feasibility analysis (verdict: purposeful micro-animation is worth it in tkinter; ambient effects are not):
+  - `animation/hydrolight_anim.py` - animate/fade_color/count_up/pulse primitives, HydroGaugeBar (gradient rise fill, red past 1.0), HydroRipple (indeterminate wave), run_threaded (queue-based, thread-safe UI marshaling), ANIMATIONS_ENABLED kill switch. Self-testing: `python hydrolight_anim.py` runs 10 headless checks.
+  - `animation/culvert_hwd_pilot.py` - working pilot (SCDOT HW/D check) exercising every primitive; smoke-tested pass/exceed/invalid paths.
+  - Known gotchas encountered: tk.Canvas subclasses must NOT set `self._w`/`self._h` (tkinter internals); worker threads must never call `widget.after()` directly (use the queue poller in run_threaded).
+  - Phase 3 (future): PyQt5/QSS Hydrolight stylesheet for QGIS plugin dialogs (real shadows, QPropertyAnimation).
 
 ---
 

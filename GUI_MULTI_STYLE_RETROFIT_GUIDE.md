@@ -499,6 +499,41 @@ E:\CLAUDE_Workspace\Claude\Report_Files\GUI_Design_Center_Library\Example\mortga
 
 ---
 
+## OPTIONAL: ANIMATION MODULE
+
+The library ships a tested micro-animation toolkit for tkinter:
+
+```
+E:\CLAUDE_Workspace\Claude\Report_Files\GUI_Design_Center_Library\animation\hydrolight_anim.py
+```
+
+Copy it next to your script (or add its folder to `sys.path`) and import:
+
+```python
+import hydrolight_anim as anim
+
+anim.count_up(result_label, 12.47)              # readout rolls to value
+bar = anim.HydroGaugeBar(parent, width=300)     # gradient capacity bar
+bar.set_fraction(0.72)                          # animated rise; >1.0 = red
+anim.fade_color(badge, "fg", "#DC2626")         # ease into a state color
+anim.pulse(badge, "#DC2626", option="fg")       # one pulse on state CHANGE
+
+ripple = anim.HydroRipple(parent, width=300)    # indeterminate wave
+ripple.start()
+anim.run_threaded(root, heavy_work,             # UI stays alive
+                  on_done=lambda r: (ripple.stop(), show(r)),
+                  on_error=lambda e: (ripple.stop(), warn(e)))
+
+anim.set_animations_enabled(False)              # global kill switch
+```
+
+Rules: animate state changes (results, verdicts, progress), never
+decoration. `run_threaded` is required for any computation over ~200 ms,
+or animations freeze with the UI. Working example with all primitives:
+`animation/culvert_hwd_pilot.py`. Self-test: `python hydrolight_anim.py`.
+
+---
+
 ## STYLE-SPECIFIC NOTES
 
 **Hydrolight (Light):** Water resources engineering theme. For the signature look in tkinter:
